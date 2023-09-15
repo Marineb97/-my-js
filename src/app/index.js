@@ -20,6 +20,7 @@ window.addEventListener('load', () => {
   spinnerStop();
 });
 
+
 refs.btnLoadMore.classList.add('is-hidden');
 
 const pixaby = new PixabayAPI();
@@ -30,7 +31,7 @@ const options = {
   threshold: 1.0,
 };
 
-const checkAndAttachObserver = async () => {
+const checkAndAttachObserver =  () => {
   if (pixaby.hasMorePhotos()) {
     const lastItem = document.querySelector('.gallery a:last-child');
     if (lastItem) {
@@ -61,7 +62,7 @@ const loadMorePhotos = async function (entries, observer) {
         const markup = createMarkup(hits);
         refs.gallery.insertAdjacentHTML('beforeend', markup);
 
-        await checkAndAttachObserver();
+        //await checkAndAttachObserver();
 
         modalLightboxGallery.refresh();
         scrollPage();
