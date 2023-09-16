@@ -126,8 +126,8 @@ const onSubmitClick = async event => {
 
     pixaby.setTotal(totalHits);
     Notify.success(`Hooray! We found ${totalHits} images.`, notifyInit);
-
-    await checkAndAttachObserver();
+ 
+     checkAndAttachObserver();
 
     modalLightboxGallery.refresh();
   } catch (error) {
